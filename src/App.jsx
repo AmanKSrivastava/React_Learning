@@ -2,11 +2,17 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
+import { useState } from "react";
 
 function App() {
-  function handleSelect() {
-    console.log("I am clicked from APP.jsx");
+  const [selectedContent, setSelectedContent] = useState(
+    "Please click a button"
+  );
+  function handleSelect(selectedButton) {
+    setSelectedContent(selectedButton);
+    console.log(selectedContent);
   }
+  console.log("App component executing");
   return (
     <div>
       <Header />
@@ -26,11 +32,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>Component</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Component
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          {selectedContent}
         </section>
       </main>
     </div>
