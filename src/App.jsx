@@ -1,31 +1,16 @@
-const reactDescription = ["Fundamental", "Core", "Crucial"];
-
-function genRandomIndex(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const description = reactDescription[genRandomIndex(2)];
-  return (
-    <header>
-      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
+import Examples from "./components/Examples.jsx";
+import Header from "./components/Header/Header.jsx";
+import CoreConcepts from "./components/CoreConcepts.jsx";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <CoreConcepts />
+        <Examples />
       </main>
-    </div>
+    </>
   );
 }
 
