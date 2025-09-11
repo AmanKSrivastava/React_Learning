@@ -1,5 +1,4 @@
 export default function Log({ turns }) {
-  console.log("logs ", turns);
   return (
     <ol id="log">
       {turns.map((turn) => (
