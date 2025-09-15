@@ -17,7 +17,7 @@ function App() {
     setCurrentValue((prevValue) => {
       return {
         ...prevValue,
-        [selectedInputName]: newValue === "" ? "" : Number(newValue),
+        [selectedInputName]: +newValue,
       };
     });
   }
