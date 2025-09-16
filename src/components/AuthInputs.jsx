@@ -10,10 +10,6 @@ const ControlContainer = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-const TextButton = styled.button`
-  color: #f0b322;
-  border: none;
-`;
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
@@ -53,7 +49,7 @@ export default function AuthInputs() {
         />
       </ControlContainer>
       <div className="actions">
-        <TextButton type="button">Create a new account</TextButton>
+        <button type="button">Create a new account</button>
         <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
