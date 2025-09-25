@@ -18,7 +18,7 @@ export default function ReesultModal({
     };
   });
   return (
-    <dialog ref={dialog} className="result-modal">
+    <dialog ref={dialog} className="result-modal" onClose={onReset}>
       {userLost ? (
         <h2>You Lost</h2>
       ) : (
@@ -34,7 +34,7 @@ export default function ReesultModal({
         You stopped the timer with{" "}
         <strong>{formattedRemainingTime} seconds left.</strong>
       </p>
-      <form method="dialog" onSubmit={onReset}>
+      <form method="dialog">
         <button>Close</button>
       </form>
     </dialog>
